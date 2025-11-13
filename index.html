@@ -1,9 +1,201 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-    <title>La mia prima pagina</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benvenuto da Simo Castro</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Stili per la pagina principale (nascosta) */
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /*
+        ========================================
+        LA TENDINA (IL SIPARIO)
+        ========================================
+        */
+        #curtain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #0a0a1f; /* Sfondo blu notte */
+            z-index: 9999;
+            cursor: pointer;
+
+            /* Centra il contenuto (SIMO CASTRO) */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            /* Animazione di sollevamento */
+            transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+            overflow: hidden; /* Nasconde le luci quando si alza */
+        }
+
+        /* Stato "sollevato" della tendina */
+        #curtain.raised {
+            transform: translateY(-100%);
+        }
+
+        /*
+        ========================================
+        I FASCI DI LUCE (CSS)
+        ========================================
+        */
+        #curtain::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            
+            /* Creiamo i fasci di luce con gradienti radiali */
+            background: 
+                radial-gradient(ellipse at 50% 0%, rgba(200, 200, 255, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 10% 20%, rgba(150, 150, 255, 0.2) 0%, transparent 40%),
+                radial-gradient(ellipse at 90% 30%, rgba(180, 180, 255, 0.2) 0%, transparent 40%),
+                radial-gradient(ellipse at 30% 100%, rgba(200, 200, 255, 0.3) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 100%, rgba(150, 150, 255, 0.3) 0%, transparent 60%);
+            
+            background-size: 200% 200%; /* Rende l'animazione più fluida */
+            
+            /* Animazione che muove i fasci */
+            animation: moveLights 20s linear infinite;
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        /* Animazione dei fasci di luce */
+        @keyframes moveLights {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        /*
+        ========================================
+        LA SCRITTA CENTRALE
+        ========================================
+        */
+        #curtain h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 8vw; /* Si adatta alla larghezza dello schermo */
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            z-index: 2; /* Sopra i fasci di luce */
+            
+            /* Effetto "glow" (luce) sul testo */
+            text-shadow: 
+                0 0 10px #fff, 
+                0 0 20px #fff, 
+                0 0 30px #fff, 
+                0 0 40px #6b6bff, 
+                0 0 70px #6b6bff;
+        }
+
+        /* Testo "Clicca per entrare" */
+        #curtain p {
+            font-family: Arial, sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 20px;
+            font-size: 1.2rem;
+            z-index: 2;
+            animation: pulse 2.5s infinite;
+        }
+
+        /* Animazione di pulsazione per il testo "clicca" */
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Hello world</h1>
+
+    <div id="curtain">
+        <h1>SIMO CASTRO</h1>
+        <p>Clicca per entrare</p>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Il Mio Sito</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Chi Sono</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contatti</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Pagina Rivelata!</h1>
+                <p class="col-md-8 fs-4">
+                    Questa è l'area che puoi modificare. 
+                    La tendina si è alzata e ora puoi inserire qui tutto il tuo contenuto HTML e Bootstrap.
+                </p>
+                <button class="btn btn-primary btn-lg" type="button">Esempio Bottone</button>
+            </div>
+        </div>
+
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6">
+                <div class="h-100 p-5 text-bg-dark rounded-3">
+                    <h2>Colonna 1</h2>
+                    <p>Il tuo contenuto...</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2>Colonna 2</h2>
+                    <p>Il tuo contenuto...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Seleziona l'elemento "tendina"
+        const curtain = document.getElementById('curtain');
+
+        // Aggiunge un "listener" per il click
+        curtain.addEventListener('click', () => {
+            // Aggiunge la classe ".raised" per far partire l'animazione CSS
+            curtain.classList.add('raised');
+        });
+    </script>
+
 </body>
 </html>
