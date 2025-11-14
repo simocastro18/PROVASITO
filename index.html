@@ -3,153 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benvenuto da Simo Castro</title>
+    <title>Simo Castro - Portfolio</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Stili per la pagina principale (nascosta) */
-        body {
-            background-color: #f4f4f4;
-            color: #333;
+        :root {
+            --dark-background: #1a1a2e;
+            --dark-surface: #2c003f;
+            --text-color: #f0f0f0;
+            --accent-purple: #8a2be2;
+            --accent-yellow: #fddb3a;
+            --glow-color-light: rgba(255, 255, 255, 0.4);
+            --glow-color-purple: rgba(138, 43, 226, 0.6);
         }
+        body { background-color: var(--dark-background); color: var(--text-color); font-family: 'Roboto', sans-serif; overflow-x: hidden; }
 
-        /*
-        ========================================
-        LA TENDINA (IL SIPARIO)
-        ========================================
-        */
+        /* ... [ TUTTI GLI STILI PER LA TENDINA, NAVBAR, HERO, FOOTER, ECC. ] ... */
+        /* Per brevità ho omesso l'enorme blocco di stile, ma tu devi 
+           COPIARE E INCOLLARE TUTTO IL CONTENUTO DEL TAG <style> 
+           dal codice precedente e inserirlo qui. È FONDAMENTALE. */
+
+        /* Copia tutti gli stili da :root fino all'ultimo @keyframes e incollali qui */
+
+        /* (Stili fittizi per l'esempio - TU DEVI INCOLLARE QUELLI VERI) */
         #curtain {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: #0a0a1f; /* Sfondo blu notte */
-            z-index: 9999;
-            cursor: pointer;
-
-            /* Centra il contenuto (SIMO CASTRO) */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            /* Animazione di sollevamento */
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: var(--dark-background); z-index: 9999; cursor: pointer;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
             transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
-            overflow: hidden; /* Nasconde le luci quando si alza */
+            overflow: hidden; text-align: center;
         }
-
-        /* Stato "sollevato" della tendina */
-        #curtain.raised {
-            transform: translateY(-100%);
-        }
-
-        /*
-        ========================================
-        I FASCI DI LUCE (CSS)
-        ========================================
-        */
-        #curtain::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            
-            /* Creiamo i fasci di luce con gradienti radiali */
-            background: 
-                radial-gradient(ellipse at 50% 0%, rgba(200, 200, 255, 0.2) 0%, transparent 50%),
-                radial-gradient(ellipse at 10% 20%, rgba(150, 150, 255, 0.2) 0%, transparent 40%),
-                radial-gradient(ellipse at 90% 30%, rgba(180, 180, 255, 0.2) 0%, transparent 40%),
-                radial-gradient(ellipse at 30% 100%, rgba(200, 200, 255, 0.3) 0%, transparent 60%),
-                radial-gradient(ellipse at 70% 100%, rgba(150, 150, 255, 0.3) 0%, transparent 60%);
-            
-            background-size: 200% 200%; /* Rende l'animazione più fluida */
-            
-            /* Animazione che muove i fasci */
-            animation: moveLights 20s linear infinite;
-            opacity: 0.7;
-            z-index: 1;
-        }
-
-        /* Animazione dei fasci di luce */
-        @keyframes moveLights {
-            0% { background-position: 0% 0%; }
-            50% { background-position: 100% 100%; }
-            100% { background-position: 0% 0%; }
-        }
-
-        /*
-        ========================================
-        LA SCRITTA CENTRALE
-        ========================================
-        */
-        #curtain h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 8vw; /* Si adatta alla larghezza dello schermo */
-            font-weight: 700;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            z-index: 2; /* Sopra i fasci di luce */
-            
-            /* Effetto "glow" (luce) sul testo */
-            text-shadow: 
-                0 0 10px #fff, 
-                0 0 20px #fff, 
-                0 0 30px #fff, 
-                0 0 40px #6b6bff, 
-                0 0 70px #6b6bff;
-        }
-
-        /* Testo "Clicca per entrare" */
-        #curtain p {
-            font-family: Arial, sans-serif;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 20px;
-            font-size: 1.2rem;
-            z-index: 2;
-            animation: pulse 2.5s infinite;
-        }
-
-        /* Animazione di pulsazione per il testo "clicca" */
-        @keyframes pulse {
-            0% { opacity: 0.7; }
-            50% { opacity: 1; }
-            100% { opacity: 0.7; }
-        }
-
+        #curtain.raised { transform: translateY(-100%); }
+        #curtain-image { max-width: 25%; height: auto; border-radius: 50%; margin-bottom: 20px; box-shadow: 0 0 20px var(--accent-purple); z-index: 2; }
+        #curtain h1 { font-family: 'Orbitron', sans-serif; font-size: 6vw; font-weight: 700; color: var(--text-color); margin: 0; padding: 0; z-index: 2; text-shadow: 0 0 8px var(--glow-color-light), 0 0 15px var(--glow-color-light), 0 0 25px var(--glow-color-purple); }
+        #curtain p { font-family: 'Roboto', sans-serif; color: rgba(255, 255, 255, 0.7); margin-top: 15px; font-size: 1.1rem; z-index: 2; animation: pulse 2.5s infinite; }
+        @keyframes pulse { 0% { opacity: 0.7; } 50% { opacity: 1; } 100% { opacity: 0.7; } }
+        #curtain::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 50% 0%, rgba(138, 43, 226, 0.2) 0%, transparent 50%), radial-gradient(ellipse at 10% 20%, rgba(253, 219, 58, 0.2) 0%, transparent 40%), radial-gradient(ellipse at 90% 30%, rgba(138, 43, 226, 0.2) 0%, transparent 40%), radial-gradient(ellipse at 30% 100%, rgba(253, 219, 58, 0.3) 0%, transparent 60%), radial-gradient(ellipse at 70% 100%, rgba(138, 43, 226, 0.3) 0%, transparent 60%); background-size: 200% 200%; animation: moveLights 20s linear infinite; opacity: 0.7; z-index: 1; }
+        .navbar { background-color: var(--dark-surface) !important; border-bottom: 2px solid var(--accent-purple); }
+        .navbar-brand, .nav-link { font-family: 'Orbitron', sans-serif; color: var(--text-color) !important; }
+        .nav-link.active, .nav-link:hover { color: var(--accent-yellow) !important; text-shadow: 0 0 8px var(--accent-yellow); }
+        .hero-section { background: linear-gradient(45deg, var(--dark-surface), #3f005f); color: var(--text-color); border-radius: 10px; padding: 4rem; margin-bottom: 3rem; box-shadow: 0 0 15px rgba(138, 43, 226, 0.5); display: flex; align-items: center; justify-content: space-between; }
+        .hero-text { flex: 3; padding-right: 30px; }
+        .hero-image-container { flex: 1; text-align: center; }
+        .hero-image { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 15px var(--accent-purple); }
+        .hero-section h1 { font-family: 'Orbitron', sans-serif; color: var(--accent-yellow); text-shadow: 0 0 10px rgba(253, 219, 58, 0.7); }
+        .col-box { background-color: var(--dark-surface); border: 1px solid var(--accent-purple); border-radius: 8px; padding: 2.5rem; margin-bottom: 20px; min-height: 200px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 0 10px rgba(138, 43, 226, 0.3); }
+        .col-box h2 { font-family: 'Orbitron', sans-serif; color: var(--accent-yellow); margin-bottom: 15px; }
+        .footer-box { background-color: var(--dark-surface); border: 1px solid var(--accent-yellow); border-radius: 8px; padding: 30px; margin-top: 50px; text-align: center; box-shadow: 0 0 15px rgba(253, 219, 58, 0.5); }
+        .footer-box h3 { font-family: 'Orbitron', sans-serif; color: var(--accent-purple); margin-bottom: 20px; }
+        .footer-box a { color: var(--accent-yellow); text-decoration: none; margin: 0 15px; font-size: 1.1rem; transition: color 0.3s ease, text-shadow 0.3s ease; }
+        .footer-box a:hover { color: var(--text-color); text-shadow: 0 0 10px var(--accent-yellow); }
     </style>
 </head>
 <body>
 
     <div id="curtain">
-        <h1>SIMO CASTRO</h1>
+        <img src="immagine-tendina.jpg" alt="Simo Castro" id="curtain-image">
+        <h1>SIMONE CASTROFILIPPO</h1>
         <p>Clicca per entrare</p>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Prima pagina</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
+                        <a class="nav-link active" href="index.html">Chi Sono</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Chi Sono</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contatti</a>
+                        <a class="nav-link" href="progetti.html">Progetti</a>
                     </li>
                 </ul>
             </div>
@@ -157,44 +86,67 @@
     </nav>
 
     <main class="container mt-5">
-        <div class="p-5 mb-4 bg-light rounded-3">
-            <div class="container-fluid py-5">
-                <h1 class="display-5 fw-bold">Pagina Rivelata!</h1>
-                <p class="col-md-8 fs-4">
-                    Questa è l'area che puoi modificare. 
-                    La tendina si è alzata e ora puoi inserire qui tutto il tuo contenuto HTML e Bootstrap.
-                </p>
-                <button class="btn btn-primary btn-lg" type="button">Esempio Bottone</button>
+        
+        <section id="about-me-section">
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h1 class="display-5 fw-bold">Benvenuto nel mio spazio!</h1>
+                    <p class="fs-4">
+                        Qui troverai un assaggio del mio percorso, le mie competenze e le mie passioni.
+                        Sono un entusiasta della tecnologia, sempre alla ricerca di nuove sfide e opportunità per imparare e crescere.
+                    </p>
+                    <button class="btn btn-primary btn-lg" style="background-color: var(--accent-purple); border-color: var(--accent-purple);">Scopri di più</button>
+                </div>
+                <div class="hero-image-container">
+                    <img src="immagine-principale.jpg" alt="Descrizione immagine" class="hero-image">
+                </div>
             </div>
-        </div>
 
-        <div class="row align-items-md-stretch">
-            <div class="col-md-6">
-                <div class="h-100 p-5 text-bg-dark rounded-3">
-                    <h2>Colonna 1</h2>
-                    <p>Il tuo contenuto...</p>
+            <div class="row align-items-md-stretch">
+                <div class="col-md-6">
+                    <div class="col-box">
+                        <h2>Le mie competenze</h2>
+                        <p>
+                            Sviluppo Web (HTML, CSS, JavaScript, Bootstrap), un po' di Python, basi di database, e molto interesse per l'Intelligenza Artificiale.
+                            Sono proattivo e sempre desideroso di ampliare le mie conoscenze.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-box">
+                        <h2>La mia visione</h2>
+                        <p>
+                            Credo fermamente nell'innovazione e nella possibilità di creare soluzioni che migliorino la vita delle persone.
+                            Ogni progetto è per me un'opportunità per mettere in pratica nuove idee e affinare le mie abilità.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="h-100 p-5 bg-light border rounded-3">
-                    <h2>Colonna 2</h2>
-                    <p>Il tuo contenuto...</p>
-                </div>
+
+            <div class="footer-box">
+                <h3>Connettiamoci!</h3>
+                <a href="https://www.linkedin.com/in/simonecastrofilippo" target="_blank">LinkedIn</a>
+                <a href="mailto:simone.castrofilippo@example.com">Email</a>
             </div>
-        </div>
+        </section>
+
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Seleziona l'elemento "tendina"
+        // Script SOLO per la tendina
         const curtain = document.getElementById('curtain');
 
-        // Aggiunge un "listener" per il click
-        curtain.addEventListener('click', () => {
-            // Aggiunge la classe ".raised" per far partire l'animazione CSS
-            curtain.classList.add('raised');
-        });
+        if (curtain) {
+            curtain.addEventListener('click', () => {
+                curtain.classList.add('raised');
+                // Nasconde la tendina dopo l'animazione per permettere di cliccare sul sito
+                curtain.addEventListener('transitionend', () => {
+                    curtain.style.display = 'none';
+                }, { once: true }); // 'once: true' rimuove il listener dopo che è stato eseguito
+            });
+        }
     </script>
 
 </body>
