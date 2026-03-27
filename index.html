@@ -62,17 +62,6 @@
             animation: flickerIn 0.6s ease forwards;
         }
 
-        #curtain-sub {
-            font-family: 'Share Tech Mono', monospace;
-            color: var(--neon-cyan);
-            font-size: clamp(0.7rem, 2vw, 1rem);
-            letter-spacing: 0.3em;
-            margin-top: 18px;
-            text-transform: uppercase;
-            opacity: 0.7;
-            animation: blink 2.5s step-end infinite;
-        }
-
         #curtain-hint {
             position: absolute;
             bottom: 40px;
@@ -151,20 +140,7 @@
                 0 0 8px var(--neon-cyan),
                 0 0 25px var(--neon-cyan),
                 0 0 50px rgba(0,255,231,0.3);
-            margin-bottom: 1.2rem;
-        }
-
-        .hero-tagline {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: clamp(0.75rem, 2vw, 1rem);
-            color: var(--text-dim);
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            margin-bottom: 2.5rem;
-        }
-
-        .hero-tagline span {
-            color: var(--neon-cyan);
+            margin-bottom: 3rem;
         }
 
         /* Neon line divider */
@@ -353,7 +329,6 @@
     <!-- CURTAIN -->
     <div id="curtain">
         <div id="curtain-name">SIMONE<br>CASTROFILIPPO</div>
-        <div id="curtain-sub">Developer &amp; Technologist</div>
         <div id="curtain-hint">— tap to enter —</div>
     </div>
 
@@ -367,7 +342,6 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-name">SIMONE<br>CASTROFILIPPO</div>
-        <div class="hero-tagline">Developer &nbsp;/&nbsp; <span>Technologist</span> &nbsp;/&nbsp; Builder</div>
         <div class="neon-line"></div>
     </section>
 
@@ -377,15 +351,11 @@
             <div class="contacts-box">
                 <div class="contacts-title">CONTACTS</div>
 
-                <a class="contact-item" href="mailto:simone.castrofilippo@gmail.com">
+                <a class="contact-item" href="/cdn-cgi/l/email-protection#4033292d2f2e256e23213334322f26292c2930302f00272d21292c6e232f2d">
                     <span class="contact-label">EMAIL</span>
-                    <span class="contact-value">simone.castrofilippo@gmail.com</span>
+                    <span class="contact-value"><span class="__cf_email__" data-cfemail="aad9c3c7c5c4cf84c9cbd9ded8c5ccc3c6c3dadac5eacdc7cbc3c684c9c5c7">[email&#160;protected]</span></span>
                 </a>
 
-                <a class="contact-item" href="tel:+393401234567">
-                    <span class="contact-label">PHONE</span>
-                    <span class="contact-value">+39 340 123 4567</span>
-                </a>
 
                 <a class="contact-item" href="https://github.com/tuo-username" target="_blank">
                     <span class="contact-label">GITHUB</span>
@@ -396,24 +366,6 @@
                     <span class="contact-label">LINKEDIN</span>
                     <span class="contact-value">linkedin.com/in/simonecastrofilippo</span>
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SKILLS & VISION -->
-    <section id="about">
-        <div class="container" style="max-width:800px;">
-            <div class="section-label">// about</div>
-            <div class="section-title">Skills &amp; Vision</div>
-
-            <div class="info-card">
-                <h3>Skills</h3>
-                <p>Web Development (HTML, CSS, JavaScript, Bootstrap), Python, database fundamentals, and a strong interest in Artificial Intelligence. Always proactive and eager to expand my knowledge.</p>
-            </div>
-
-            <div class="info-card">
-                <h3>Vision</h3>
-                <p>I believe strongly in innovation and the ability to create solutions that improve people's lives. Every project is an opportunity to put new ideas into practice and sharpen my skills.</p>
             </div>
         </div>
     </section>
@@ -447,15 +399,7 @@
         <span>&copy; 2025 SIMONE CASTROFILIPPO</span>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const curtain = document.getElementById('curtain');
-        curtain.addEventListener('click', () => {
-            curtain.classList.add('raised');
-            curtain.addEventListener('transitionend', () => {
-                curtain.style.display = 'none';
-            }, { once: true });
-        });
-    </script>
-</body>
-</html>
+        curtai
